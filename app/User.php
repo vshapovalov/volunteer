@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    function favoriteCategories(){
+        return $this->belongsToMany(PostCategory::class, 'user_favorite_cats');
+    }
 }
